@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>JLN | Capsule Collection</title>
+	<meta property="og:url" content="index.html">
+	<meta property="og:site_name" content="Nozer- Jewelry Store Shopify Theme">
+	<meta name="twitter:card" content="summary">
+	<link rel="canonical" href="index.html">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="theme-color" content="#7fc9c4">
+	<link rel="icon" href="cdn.shopify.com/s/files/1/0227/2047/9268/t/7/assets/favicon20ee.png?v=3204386079363479650" type="image/png" sizes="16x16">
+
+	<!-- font -->
+
+	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&amp;display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+{% include 'headlinks.html' %}
+	<style>
+		body {
+			overflow-x: hidden !important;
+		}
+	</style>
+</head>
+
+<body class="preload push_filter_left js_overhidden">
+{% load static %}
+	<div class="wrap">
+		<div class="contentbody">
+{% include 'header.html' %}
+
+			<div id="shopify-section-contact-template" class="shopify-section">
+				<div class="wrap-bread-crumb breadcrumb_collection2">
+					<div class="text-center bg-breadcrumb" style="background-image: url({% static './img/aboutus-bg_140.jpg' %});">
+						<div class="title-page">
+
+							<h2 class="">{{category.name}}</h2>
+
+						</div>
+						<!-- /snippets/breadcrumb.liquid -->
+
+
+
+						<div class="bread-crumb">
+							<a href="/" title="Back to the frontpage">Home<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+							<strong>{{category.name}}</strong>
+						</div>
+					</div>
+				</div>
+				<section id="content">
+					<div class="content-page contact-page">
+						<div class="container container-v2 text-center">
+							<div id="shopify-section-1568435391144" class="shopify-section">
+								<div data-section-id="1568435391144" data-section-type="section-product-v6" style=" ">
+									<div class="ds-product-v6">
+										<div class="container container-v2">
+											<div class="title_ds_prodv5 text-center">
+												<h3 class="mb-0">{{category.name}}</h3>
+												<p class="big_title mb-0">{{category.desc}}</p>
+											</div>
+											 <div class=" product_new">
+												<div class="row ">
+												{% for i in products  %}
+													<div class="col-lg-3 col-md-4 mb-3 col-12 product_item">
+														<div class="product-item-v1">
+															<div class="product mb-30 engoj_grid_parent relative">
+																<div class="img-product relative">
+																 <a style="" href="{{i.get_url}}" class="engoj_find_img"> 
+																 <img style="width: 100%" src="{{i.image.url}}" class="img-responsive img-four" alt="Sample affiliate product"> <img style="width: 100%; height:295px;" src="{{i.image2.url}}" class="img-responsive absolute img-product-hover" alt="Sample affiliate product"> </a>
+																	<figure style="background : #ff4949; color: #ffffff" class="absolute uppercase label-sale text-center"> Sale </figure>
+																	<div class="product-icon-action">
+																		<div class="add-wishlist"> 
+																		<a href="{{i.get_url}}" class="box-shadow  inline-block maxus-product__wishlist wish text-center" data-toggle="tooltip" data-placement="top" data-original-title="Add to Wishlist"> <i class="icon-heart "></i> </a> 
+																		</div>
+																		<div class="add-to-cart">
+																			<form method="post" action="#" enctype="multipart/form-data" class="inline-block icon-addcart margin_right_10 box-shadow" data-toggle="tooltip" data-placement="top" data-original-title="Shop Now">
+																				<!-- <input type="hidden" name="id" value="30287356788772" /> -->
+																				<button type="submit" name="add" class="enj-add-to-cart-btn "> <i class="icon-cart" style="font-size: 22px;"></i> </button>
+																			</form>
+																		</div>
+																	</div>
+																</div>
+																<div class="info-product">
+																	<h4 class="des-font capital title-product mb-0 flex"> 
+																	<a href="{{i.get_url}}">{{i.name}}</a> 
+																	</h4>
+																	<div class="shop-button"> <a class="button-shop1 button-shop-1569901097042-1569912915546" href="{{i.get_url}}" style="color:#fff; background-color:#000" tabindex="-1"> Shop now </a> </div>
+																	<!-- END PRODUCT     -->
+
+																	<p class="price-product"> <span class="price">{{i.price}}</span> <s class="price-old"></s> </p>
+																</div>
+															</div>
+														</div>
+														<style>
+
+														</style>
+													</div>
+													{% endfor %}
+												</div>
+											</div> 
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+{% include 'footer.html' %}
+		</div>
+	</div>
+	{% include 'scriptfoot.html' %}
+</body>
+
+</html>

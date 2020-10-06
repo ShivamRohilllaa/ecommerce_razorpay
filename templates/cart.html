@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>JLN | Cart</title>
+	<meta property="og:url" content="index.html">
+	<meta property="og:site_name" content="Nozer- Jewelry Store Shopify Theme">
+	<meta name="twitter:card" content="summary">
+	<link rel="canonical" href="index.html">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="theme-color" content="#7fc9c4">
+	<link rel="icon" href="cdn.shopify.com/s/files/1/0227/2047/9268/t/7/assets/favicon20ee.png?v=3204386079363479650" type="image/png" sizes="16x16">
+
+	<!-- font -->
+
+	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&amp;display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+{% include 'headlinks.html' %}
+	<style>
+		body {
+			overflow-x: hidden !important;
+		}
+	</style>
+</head>
+
+<body class="preload push_filter_left js_overhidden">
+{% load static %}
+	<div class="wrap">
+		<div class="contentbody">
+{% include 'header.html' %}
+
+			<div id="shopify-section-contact-template" class="shopify-section">
+				<div class="wrap-bread-crumb breadcrumb_collection2">
+					<div class="text-center bg-breadcrumb" style="background-image: url({% static './img/aboutus-bg_140.jpg' %});">
+						<div class="title-page">
+							<h2 class="">Cart</h2>
+						</div>
+						<div class="bread-crumb">
+							<a href="/" title="Back to the frontpage">Home<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+							<strong>Cart</strong>
+						</div>
+					</div>
+				</div>
+
+<section class="page-cart">
+  
+  <div class="content-pages">
+    <div class="container">
+      <div class="content-about content-cart-page">
+{% if not cart_items  %}      
+<h4>Your cart is empty</h4>
+<p>Click here to <a href="/" style="color:red;"> Continue Shopping</a></p>
+{% else %}
+        <form action="" method="post" novalidate="">
+          <div class="table-responsive">
+            <table class="shop_table table--responsive cart table">
+              <thead>
+                <tr class="cart-title">                  
+                  <th colspan="2" class="product-thumbnail"> Product name</th>
+                  <th class="product-price">Price</th>
+                  <th class="product-quantity">Quantity</th>
+                  <th class="product-subtotal">Total</th>
+                  <th class="product-remove">&nbsp;</th>
+                </tr>
+              </thead>                          
+              <tbody>
+              {% for i in cart_items  %}
+                <tr class="cart_item">                  
+                  <td data-label="Product Name" class="product-thumbnail">
+		          <img src="{{i.product.image.url}}" alt="">
+                  </td>
+                  <td class="product-name-thumb" data-title="Product">
+                    	{{i.product.name}}                  </td>
+                  
+                  <td data-label="Product Price" class="product-price" data-title="Price">
+                    <span class="amount">Rs. {{i.product.price}}</span>					
+                  </td>
+                  <td data-label="Quantity" class="product-quantity" data-title="Quantity">
+                    
+  
+    <div class="js-qty">
+      <input type="number" class="" id="15qty" value="{{i.quantity}}">
+     <span style="width: 165px; top: -6px;"> <a href="{% url 'add_cart' i.product.id %}"> <i class="fa fa-plus"></i> </a> </span> 
+      <span style="width: 165px; top: 18px;"> <a href="{% url 'cart_remove' i.product.id %}"><i class="fa fa-minus"></i> </a> </span>
+    </div>
+
+                  </td>
+                  <td data-label="Sub Total" class="product-subtotal" data-title="Total">
+                    <span class="amount">Rs. {{i.sub_total}}</span>	                    
+                  </td>
+                  
+                  <td class="product-remove">
+                    <a href="{% url 'cart_delete' i.product.id %}"><i class="fa fa-remove"></i></a>
+                  </td>
+                </tr>
+                        {% comment %} <button class="btn btn-success btn-block" type="submit">Buy</button> {% endcomment %}
+                {% endfor %}                
+              </tbody>
+            </table>
+            <tr>
+                <td> 
+                 <p style="color:red; float: right; font-weight: 600;">Total = Rs. {{total}} </p>
+                </td>
+                </tr>
+
+<form method='post' action="{% url 'cart_detail' %}">
+{% csrf_token %}
+  <div class="form-group">
+    <label for="exampleInputEmail1">Name</label>
+    <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="billingName">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Address</label>
+    <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="billingAddress">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">City</label>
+    <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="billingCity">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">PostCode</label>
+    <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="billingPostcode">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Country</label>
+    <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="billingCountry">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Shipping Name</label>
+    <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="shippingName">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Shipping Address</label>
+    <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="shippingAddress">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Shipping City</label>
+    <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="shippingCity">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Shipping PostCode</label>
+    <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="shippingPostcode">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Shipping Country</label>
+    <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="shippingCountry">
+  </div>
+  {% comment %} <button type="submit" class="btn btn-primary">Submit</button> {% endcomment %}
+</form>
+           <div class="mx-auto">
+     <form action="{% url 'charge' %}" method="POST">
+{% csrf_token %}
+<script
+    src="https://checkout.razorpay.com/v1/checkout.js"
+    data-key="{{data_key}}" // Enter the Key ID generated from the Dashboard
+    data-amount="{{total}}" // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    data-currency="INR"
+    data-order_id="{{payment.id}}"//This is a sample Order ID. Pass the `id` obtained in the response of the previous step.
+    data-buttontext="Pay"
+    data-name="JNJ"
+    data-description="JNJ Jewellers"
+    data-image="https://example.com/your_logo.jpg"
+    data-prefill.name="true"
+    data-prefill.email="true"
+    data-prefill.contact="true"
+    data-theme.color="#F37254"
+></script>
+<input type="hidden" custom="Hidden Element" name="hidden">
+</form>
+
+        </div>     
+          </div>
+			  </div>              
+          </div>                
+      </form></div>	
+    </div>
+  </div>
+  <!-- End Content Pages -->
+</section>
+{% endif %}
+			</div>
+{% include 'footer.html' %}
+		</div>
+	</div>
+	{% include 'scriptfoot.html' %}
+</body>
+
+</html>

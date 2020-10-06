@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>JNJ | Contact Us</title>
+	<meta property="og:url" content="index.html">
+	<meta property="og:site_name" content="Nozer- Jewelry Store Shopify Theme">
+	<meta name="twitter:card" content="summary">
+	<link rel="canonical" href="index.html">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="theme-color" content="#7fc9c4">
+	<link rel="icon" href="cdn.shopify.com/s/files/1/0227/2047/9268/t/7/assets/favicon20ee.png?v=3204386079363479650" type="image/png" sizes="16x16">
+
+	<!-- font -->
+
+{% include 'headlinks.html' %}
+	<style>
+		body {
+			overflow-x: hidden !important;
+		}
+	</style>
+</head>
+
+
+<body class="preload push_filter_left js_overhidden">
+{% load static %}
+	<div class="wrap">
+		<div class="contentbody">
+			{% include 'header.html' %}
+
+			<div id="shopify-section-contact-template" class="shopify-section">
+				<div class="wrap-bread-crumb breadcrumb_collection2">
+					<div class="text-center bg-breadcrumb" style="background-image: url({% static './img/aboutus-bg_140.jpg' %});">
+						<div class="title-page">
+							<h2 class="">Contact Us</h2>
+						</div>
+						<div class="bread-crumb">
+							<a href="index.php" title="Back to the frontpage">Home<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+							<strong>Contact Us</strong>
+						</div>
+					</div>
+				</div>
+				<section id="content">
+					<div class="content-page contact-page">
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<div class="title_ds_prodv6 text-center">
+								<h3 class="mb-0">Contact Us</h3>
+							</div>
+						</div>
+						<div class="container container-v2">
+							<div class="contact-form">
+								<div class="col-lg-12 col-md-12 contact-pad">
+									<div class="row">
+										<div class="col-md-6 col-sm-12 col-12">
+											<div class="map">
+												<iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d56002.490136109926!2d77.0573664242747!3d28.68499069351723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d28.6663426!2d77.0664127!4m5!1s0x390d03dfd4fc9cdf%3A0xaf737f7dd5871c8d!2swww.uniquedzine!3m2!1d28.7035804!2d77.12574149999999!5e0!3m2!1sen!2sin!4v1594999968738!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-12 col-12">
+											<div class="contact-form-page">
+
+												<form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8" class="contact-form"><input type="hidden" name="form_type" value="contact"><input type="hidden" name="utf8" value="✓">
+
+
+
+
+													<div class="contact-form">
+														<p class="contact-name">
+															<input class="" placeholder="Your Name (Required)" type="text" id="contactFormName" name="contact[name]" required="">
+														</p>
+														<p class="contact-email">
+															<input class="" placeholder="Your Email (Required)" type="email" id="contactFormEmail" name="contact[email]" required="">
+														</p>
+														<p class="contact-subject">
+															<input class="dark border" placeholder="Subject" type="text" id="contactFormSubject" name="contact[subject]" required="">
+														</p>
+														<p class="contact-message">
+															<textarea class="" placeholder="Your Message" cols="30" rows="10" id="contactFormMessage" name="contact[body]" required=""></textarea>
+														</p>
+														<p class="contact-submit">
+															<input class="shop-button" type="submit" value="Send To us">
+														</p>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+{% include 'footer.html' %}
+		</div>
+	</div>
+	{% include 'scriptfoot.html' %}
+</body>
+
+</html>

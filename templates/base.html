@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{% block title %}
+    {% endblock title %}</title>
+	<meta property="og:url" content="index.html">
+	<meta property="og:site_name" content="Nozer- Jewelry Store Shopify Theme">
+	<meta name="twitter:card" content="summary">
+	<link rel="canonical" href="index.html">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="theme-color" content="#7fc9c4">
+	<link rel="icon" href="cdn.shopify.com/s/files/1/0227/2047/9268/t/7/assets/favicon20ee.png?v=3204386079363479650" type="image/png" sizes="16x16">
+
+	<!-- font -->
+
+{% include 'headlinks.html' %}
+	<style>
+		body {
+			overflow-x: hidden !important;
+		}
+	</style>
+</head>
+
+
+{% load static %}
+<body class="preload push_filter_left js_overhidden">
+{% block body %}
+	<div class="wrap">
+		<div class="contentbody">
+{% include 'header.html' %}
+			<div id="shopify-section-header" class="shopify-section index-section">
+				<!-- /sections/header.liquid -->
+
+			</div>
+
+			<div id="shopify-section-about-template" class="shopify-section">
+				<div class="wrap-bread-crumb breadcrumb_collection2">
+					<div class="text-center bg-breadcrumb" style="background-image: url( {% static './img/aboutus.jpg' %} );">
+						<div class="title-page">
+							<h2 class="">{% block bannertitle %}
+                            {% endblock bannertitle %}</h2>
+						</div>
+						<div class="bread-crumb">
+							<a href="index.php" title="Back to the frontpage">Home<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+
+							<strong>{% block bannertitlesmall %}
+                            {% endblock bannertitlesmall %}</strong>
+
+
+						</div>
+
+
+
+
+					</div>
+				</div>
+
+{% include 'footer.html' %}
+		</div>
+
+	</div>
+
+{% include 'scriptfoot.html' %}
+{% endblock body %}
+</body>
+</html>

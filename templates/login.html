@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>JNJ | Login</title>
+	<meta property="og:url" content="index.html">
+	<meta property="og:site_name" content="Nozer- Jewelry Store Shopify Theme">
+	<meta name="twitter:card" content="summary">
+	<link rel="canonical" href="index.html">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="theme-color" content="#7fc9c4">
+	<link rel="icon" href="cdn.shopify.com/s/files/1/0227/2047/9268/t/7/assets/favicon20ee.png?v=3204386079363479650" type="image/png" sizes="16x16">
+
+	<!-- font -->
+
+{% include 'headlinks.html' %}
+	<style>
+		body {
+			overflow-x: hidden !important;
+		}
+	</style>
+</head>
+
+
+<body class="preload push_filter_left js_overhidden">
+{% load static %}
+	<div class="wrap">
+		<div class="contentbody">
+			{% include 'header.html' %}
+			<div id="shopify-section-contact-template" class="shopify-section">
+				<div class="wrap-bread-crumb breadcrumb_collection2">
+					<div class="text-center bg-breadcrumb" style="background-image: url({% static './img/aboutus-bg_140.jpg' %});">
+						<div class="title-page">
+							<h2 class="">Login/Signup</h2>
+						</div>
+						<div class="bread-crumb">
+							<a href="index.php" title="Back to the frontpage">Home<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+							<strong>Login/Signup</strong>
+						</div>
+					</div>
+				</div>
+        {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissable fade-show" role="alert">
+        <strong>Message: </strong>{{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+  </button>
+    </div>
+    {% endfor %}
+<div class="login_regester">
+  <div class="container">
+    <div class="row justify-content-between">      
+      <div class="col-lg-5 login">
+        <div class="CustomerLoginForm">
+        <h1 class="mb-0 title_login text-center"><i class="fa fa-user"></i> Login</h1>        
+        <form method="post" action="/login" accept-charset="UTF-8"><input type="hidden" name="form_type"><input type="hidden" name="utf8" value="✓">
+        {% csrf_token %}
+          <div class="form-group row">            
+            <label for="staticEmail" class="col-sm-3 col-form-label">Email adress </label>
+            <div class="col-sm-9">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Email adress" required="">
+            </div>
+          </div>
+        
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-3 col-form-label">Password </label>
+            <div class="col-sm-9">
+              <input type="password" class="form-control" placeholder="Password" id="password" name="password" required="">
+            </div>
+          </div>
+                  {% if error %}
+          <div class="alert alert-danger" role="alert">
+{{error}}
+</div>  
+{% endif %}
+          <div class="text-center mt-5">
+            <button class="btn btn-dark" type="submit" value="Log In">
+              Log In
+            </button>
+          </div>
+          <div class="forgot_pass_form mt-4 d-flex justify-content-center">
+            <div class="leftx pr-4">
+               <a href="/">Return to Store</a>
+            </div>
+           
+            
+            <div class="rightx">
+            <a href="#recover" class="RecoverPassword">Forgot your password?</a>
+            </div>
+            
+          </div>
+        </form></div>
+      </div>
+      <div class="col-lg-6 register">
+        <h1 class="mb-0 title_login text-center"><i class="fa fa-user"></i> Register</h1>
+         <form method="post" action="/signup" accept-charset="UTF-8"><input type="hidden" name="form_type" value="create_customer"><input type="hidden" name="utf8" value="✓">
+         {% csrf_token %}
+          <div class="form-group row">
+            <label for="staticEmail" class="col-sm-3 col-form-label">first Name</label>
+            <div class="col-sm-9">
+              <input type="name" placeholder="first Name" class="form-control" value="{{values.firstname}}" name="firstname">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="staticEmail" class="col-sm-3 col-form-label">last Name</label>
+            <div class="col-sm-9">
+              <input type="name" placeholder="last Name" class="form-control" value="{{values.lastname}}" name="lastname">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="staticEmail" class="col-sm-3 col-form-label">Phone Number</label>
+            <div class="col-sm-9">
+              <input type="number" placeholder="Phone Number" class="form-control" value="{{values.phone}}" name="phone">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="staticEmail" class="col-sm-3 col-form-label">Email address</label>
+            <div class="col-sm-9">
+              <input type="email" placeholder="Email address" class="form-control" value="{{values.email}}"  name="email">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
+            <div class="col-sm-9">
+              <input type="password" class="form-control" name="password" placeholder="Password" required="">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-3 col-form-label">Confirm Password</label>
+            <div class="col-sm-9">
+              <input type="password" class="form-control" name="password1" placeholder="Confirm Password" required="">
+            </div>
+          </div>
+          {% if error %}
+          <div class="alert alert-danger" role="alert">
+{{error}}
+</div>  
+{% endif %}
+          <div class="text-center mt-5">
+            <button class="btn btn-dark" type="submit" value="register">
+              register
+            </button>
+          </div>
+        </form>
+        <div class="forgot_pass mt-4 text-center">
+          <a href="/">Return to Store</a>
+        </div>
+      </div>       
+    </div>
+  </div>
+</div>
+			</div>
+{% include 'footer.html' %}
+		</div>
+	</div>
+	{% include 'scriptfoot.html' %}
+</body>
+
+</html>

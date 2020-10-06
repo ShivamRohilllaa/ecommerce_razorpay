@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>JLN | {{product.name}}</title>
+	<meta property="og:url" content="/">
+	<meta property="og:site_name" content="Nozer- Jewelry Store Shopify Theme">
+	<meta name="twitter:card" content="summary">
+	<link rel="canonical" href="/">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="theme-color" content="#7fc9c4">
+	<link rel="icon" href="cdn.shopify.com/s/files/1/0227/2047/9268/t/7/assets/favicon20ee.png?v=3204386079363479650" type="image/png" sizes="16x16">
+
+	<!-- font -->
+
+	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&amp;display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+{% include 'headlinks.html' %}
+	<style>
+		body {
+			overflow-x: hidden !important;
+		}
+	</style>
+</head>
+
+<body class="preload push_filter_left js_overhidden">
+{% load static %}
+	<div class="wrap">
+		<div class="contentbody">
+			{% include 'header.html' %}
+
+			<!-- /templates/product.liquid -->
+			<div id="shopify-section-product-template" class="shopify-section" style="padding-top: 150px;">
+				<div class="prod_sticky">
+					<section id="content">
+						<div class="wrap-bread-crumb">
+							<div class="container container-v2  ">
+								<div class="row">
+									<div class="col-sm-6">
+										<!-- /snippets/breadcrumb.liquid -->
+
+										<div class="bread-crumb"> <a href="/" title="Back to the frontpage">Home<i class="fa fa-angle-right" aria-hidden="true"></i></a> <strong>{{product.name}}</strong> </div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- End Bread Crumb -->
+						<div class="">
+							<div class="content-page container container-v2">
+								<div class="content-page-detail">
+									<div class="row">
+										<div class="col-lg-6 col-md-7 col-sm-12 col-12">
+											<div class="image-gallery">
+												<aside class="thumbnails">
+													<a href="JavaScript:Void(0);" class="selected thumbnail" data-big={{product.image4.url}}>
+														<div class="thumbnail-image" style="background-image: url({{product.image4.url}})"></div>
+													</a>
+													<a href="JavaScript:Void(0);" class="thumbnail" data-big="{{product.image2.url}}">
+														<div class="thumbnail-image" style="background-image: url({{product.image2.url}})"></div>
+													</a>
+													<a href="JavaScript:Void(0);" class="thumbnail" data-big="{{product.image3.url}}">
+														<div class="thumbnail-image" style="background-image: url({{product.image3.url}})"></div>
+													</a>
+												</aside>
+
+												<main class="primary" style="background-image: url({{product.image.url}});"></main>
+											</div>
+										</div>
+										<div class="col-lg-6 col-md-5 col-sm-12 col-12 sticky_content js_sticky  ">
+											<div class="detail-info">
+												<div class="relative">
+													<h2 class="product-title ">{{product.name}}</h2>
+													<div class="product-price ">
+													<ins class="enj-product-price engoj_price_main">Rs. {{product.price}}</ins>
+												  </div>
+													<div class="wrap-rating"> <span class="shopify-product-reviews-badge" data-id="4167389315108"></span> </div>
+													<div class="pd_summary">
+														<p class=" mb-0">{{product.desc}}
+													</div>
+													{% if product.stock <= 0 %}
+													<p style="color:red;"> Out Of Stock </p>
+													{% else %}
+													<div class="btn-action detail-attr qty-cart">
+														<a href="{% url 'add_cart' product.id %}">
+														<button type="submit" class="shop-button enj-add-to-cart-btn engoj-btn-addtocart"> Add To Cart </button>
+</a>
+													</div>
+													{% endif %}													
+													<div class="btn-addwhlist"> <a href="" class="box-shadow  inline-block maxus-product__wishlist wish text-center" data-toggle="tooltip" data-placement="top" data-original-title="Shop Now"> <i class="icon-heart "></i> </a> <span class="text_whlist"></span> </div>
+													<ul class="product-meta-info">
+														<li>
+															<div class="item-product-meta-info product-category-info">
+																<label>Categories :</label>
+																<a href="../collections/best-sellers.htm">Best Sellers, </a> <a href="../collections/new-collection.htm">Collection, </a> <a href="../collections/frontpage.htm">Home page, </a> <a href="../collections/new.htm">New </a> </div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+						</div>
+{% include 'footer.html' %}
+		</div>
+	</div>
+	{% include 'scriptfoot.html' %}
+</body>
+
+</html>
